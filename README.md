@@ -1,11 +1,30 @@
 # 모두의오늘 온라인 명함 템플릿 사용 가이드
 
+[![GitHub stars](https://img.shields.io/github/stars/modootoday/today.modoo.template.namecard.svg?style=social)](https://github.com/modootoday/today.modoo.template.namecard/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/modootoday/today.modoo.template.namecard.svg?style=social)](https://github.com/modootoday/today.modoo.template.namecard/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/modootoday/today.modoo.template.namecard.svg)](https://github.com/modootoday/today.modoo.template.namecard/issues)
+[![GitHub license](https://img.shields.io/github/license/modootoday/today.modoo.template.namecard.svg)](https://github.com/modootoday/today.modoo.template.namecard/blob/main/LICENSE)
+
+> 🌟 **데모 페이지**: [https://modootoday.github.io/today.modoo.template.namecard/](https://modootoday.github.io/today.modoo.template.namecard/)
+> 
+> 🔗 **GitHub 레포지토리**: [https://github.com/modootoday/today.modoo.template.namecard](https://github.com/modootoday/today.modoo.template.namecard)
+> 
+> 이 링크에서 온라인 명함 템플릿의 실제 모습을 확인하고 소스 코드를 볼 수 있습니다.
+
 ## 목차
-1. [GitHub 계정 생성](#1-github-계정-생성)
-2. [온라인 명함 템플릿으로 레포지토리 생성](#2-모두의오늘-온라인-명함-템플릿으로-레포지토리-생성)
-3. [명함 정보 설정](#3-_configyml-파일-수정하여-명함-정보-설정)
-4. [온라인 명함 게시](#4-github-pages-활성화하여-온라인-명함-게시)
-5. [주의사항](#주의사항)
+1. [소개](#소개)
+2. [GitHub 계정 생성](#1-github-계정-생성)
+3. [온라인 명함 템플릿으로 레포지토리 생성](#2-모두의오늘-온라인-명함-템플릿으로-레포지토리-생성)
+4. [명함 정보 설정](#3-_configyml-파일-수정하여-명함-정보-설정)
+5. [온라인 명함 게시](#4-github-pages-활성화하여-온라인-명함-게시)
+6. [주의사항](#주의사항)
+7. [문제 해결 및 지원](#문제-해결-및-지원)
+
+---
+
+## 소개
+
+모두의오늘 온라인 명함 템플릿은 GitHub Pages를 활용하여 누구나 쉽게 자신만의 디지털 명함을 만들 수 있도록 설계되었습니다. 이 가이드를 따라 단계별로 진행하면, 전문적이고 세련된 온라인 명함을 몇 분 안에 만들 수 있습니다.
 
 ---
 
@@ -30,9 +49,10 @@
 ## 2. 모두의오늘 온라인 명함 템플릿으로 레포지토리 생성
 
 1. GitHub에 로그인합니다.
-2. 모두의오늘 온라인 명함 템플릿 페이지로 이동합니다. (URL은 별도 제공)
-3. "Use this template" 버튼을 클릭합니다.
-4. 새 레포지토리 생성 페이지에서:
+2. 모두의오늘 온라인 명함 템플릿 레포지토리로 이동합니다:
+   **[https://github.com/modootoday/today.modoo.template.namecard](https://github.com/modootoday/today.modoo.template.namecard)**
+3. 우측 상단의 "Use this template" 버튼을 클릭합니다.
+4. "Create a new repository" 페이지에서:
    - **Owner**: 본인의 GitHub 계정 선택
    - **Repository name**: 원하는 이름 입력 (예: 'my-digital-namecard')
    - **Description**: (선택사항) 설명 추가
@@ -94,6 +114,8 @@ display:
 
 > 설정 완료 후 GitHub가 사이트를 빌드하고 배포하는 데 몇 분이 소요될 수 있습니다.
 > 배포가 완료되면 설정 페이지 상단에 표시되는 URL에서 귀하의 온라인 명함을 확인할 수 있습니다.
+> 
+> 📌 **참고**: 귀하의 온라인 명함은 데모 페이지([https://modootoday.github.io/today.modoo.template.namecard/](https://modootoday.github.io/today.modoo.template.namecard/))와 유사한 형태로 보이게 됩니다. 단, 귀하의 개인 정보로 채워진 상태입니다.
 
 ---
 
@@ -103,8 +125,29 @@ display:
 - 🔒 개인정보 보호에 유의하세요. 공개하고 싶지 않은 정보는 입력하지 마세요.
 - 🖼️ 프로필 이미지는 전문적이고 적절한 것을 선택하세요.
 - 🔄 정기적으로 정보를 업데이트하여 항상 최신 상태를 유지하세요.
-- 🆘 문제 발생 시 GitHub 공식 문서나 모두의오늘 커뮤니티에 도움을 요청하세요.
+- 🌐 GitHub Pages URL은 `https://<username>.github.io/<repository-name>`
+  형식입니다.
 
 ---
 
-**🎉 축하합니다!** 이 가이드를 따라 설정하면 "모두의오늘 온라인 명함 템플릿"을 사용하여 전문적이고 효과적인 온라인 명함을 쉽게 만들 수 있습니다.
+## 문제 해결 및 지원
+
+- 📘 자세한 GitHub Pages 사용법은 [공식 문서](https://docs.github.com/en/pages)를 참조하세요.
+- ❓ 템플릿 사용 중 문제가 발생하면 [Issues 페이지](https://github.com/modootoday/today.modoo.template.namecard/issues)에 
+  질문을 올려주세요.
+- 💡 기능 제안이나 개선 아이디어가 있다면 [Pull Request](https://github.com/modootoday/today.modoo.template.namecard/pulls)를 
+  제출해 주세요.
+- 🆘 긴급한 도움이 필요하다면 모두의오늘 커뮤니티에 문의하세요.
+
+---
+
+**🎉 축하합니다!** 이 가이드를 따라 설정하면 "모두의오늘 온라인 명함 템플릿"을 사용하여 전문적이고 효과적인 온라인 명함을 쉽게 만들 수 있습니다. 완성된 명함은 데모 페이지와 유사하지만, 귀하의 고유한 정보로 채워진 상태일 것입니다.
+
+**🔗 중요 링크**:
+- 데모 페이지: [https://modootoday.github.io/today.modoo.template.namecard/](https://modootoday.github.io/today.modoo.template.namecard/)
+- GitHub 레포지토리: [https://github.com/modootoday/today.modoo.template.namecard](https://github.com/modootoday/today.modoo.template.namecard)
+
+[![GitHub stars](https://img.shields.io/github/stars/modootoday/today.modoo.template.namecard.svg?style=social)](https://github.com/modootoday/today.modoo.template.namecard/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/modootoday/today.modoo.template.namecard.svg?style=social)](https://github.com/modootoday/today.modoo.template.namecard/network/members)
+
+이 프로젝트가 마음에 드신다면, GitHub에서 스타를 눌러주세요! 👆

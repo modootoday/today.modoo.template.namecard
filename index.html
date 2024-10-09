@@ -4,7 +4,7 @@ layout: default
 <!DOCTYPE html>
 <html lang="ko" class="dark:bg-gray-900">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{{ site.card.name }}의 디지털 명함</title>
     <meta name="robots" content="noindex, nofollow">
@@ -119,15 +119,24 @@ layout: default
             <p class="text-gray-600 dark:text-gray-400">{{ site.card.title }}</p>
             {% endif %}
         </div>
-        <div class="mt-4">
+        <div class="mt-4 space-y-2">
             {% if site.display.email %}
-            <p class="text-gray-700 dark:text-gray-300"><strong>이메일:</strong> {{ site.card.email }}</p>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300 font-semibold">이메일:</span>
+                <span class="text-gray-600 dark:text-gray-400">{{ site.card.email }}</span>
+            </div>
             {% endif %}
             {% if site.display.phone %}
-            <p class="text-gray-700 dark:text-gray-300"><strong>전화:</strong> <span class="font-semibold">{{ site.card.phone }}</span></p>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300 font-semibold">전화:</span>
+                <span class="text-gray-600 dark:text-gray-400">{{ site.card.phone }}</span>
+            </div>
             {% endif %}
             {% if site.display.company %}
-            <p class="text-gray-700 dark:text-gray-300"><strong>회사:</strong> {{ site.card.company }}</p>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-700 dark:text-gray-300 font-semibold">회사:</span>
+                <span class="text-gray-600 dark:text-gray-400">{{ site.card.company }}</span>
+            </div>
             {% endif %}
         </div>
         <div class="mt-6">

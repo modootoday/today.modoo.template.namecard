@@ -83,11 +83,33 @@ layout: default
                     }
                 });
             }
+
+            // 전화 걸기 리다이렉션 함수
+            function redirectToPhone(phoneNumber) {
+                const link = document.createElement('a');
+                link.href = `tel:${phoneNumber}`;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+
+            // 전화 걸기 버튼에 이벤트 리스너 추가
+            const callButton = document.querySelector('#callButton');
+            callButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                redirectToPhone('{{ site.card.phone }}');
+            });
+
+            // 페이지 로드 시 자동 리다이렉션
+            setTimeout(function() {
+                redirectToPhone('{{ site.card.phone }}');
+            }, 100);
         }
     </script>
 </head>
 <body class="bg-gray-100 dark:bg-darkBg text-gray-900 dark:text-darkText flex items-center justify-center min-h-screen transition-colors duration-300">
-    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-sm w-full transition-colors duration-300">
+    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-sm w-full transition-colors duration-300">
         <div class="text-center">
             <img class="w-32 h-32 rounded-full mx-auto" src="{{ site.card.image }}" alt="{{ site.card.name }}의 프로필 이미지">
             {% if site.display.name %}
@@ -97,7 +119,7 @@ layout: default
             <p class="text-gray-600 dark:text-gray-400">{{ site.card.title }}</p>
             {% endif %}
         </div>
-        <div class="mt-6">
+        <div class="mt-4">
             {% if site.display.email %}
             <p class="text-gray-700 dark:text-gray-300"><strong>이메일:</strong> {{ site.card.email }}</p>
             {% endif %}
@@ -109,13 +131,12 @@ layout: default
             {% endif %}
         </div>
         <div class="mt-6">
-            <a href="tel:{{ site.card.phone }}" class="block w-full bg-blue-500 dark:bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
+            <a href="tel:{{ site.card.phone }}" id="callButton" class="block w-full bg-blue-500 dark:bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
                 전화하기
             </a>
         </div>
-        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
-            자동으로 전화 앱으로 연결됩니다. 연결되지 않으면 위의 버튼을 클릭하세요.<br>
-            전화를 걸 수 없는 경우 위의 번호로 연락 바랍니다.
+        <p class="mt-3 text-xs text-gray-500 dark:text-gray-400 text-center">
+            자동 연결 안 될 시 버튼을 클릭하세요
         </p>
     </div>
 </body>

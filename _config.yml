@@ -1,0 +1,21 @@
+# Site settings
+title: 디지털 명함
+baseurl: ""
+url: ""
+
+# Card settings
+card:
+  name: 홍길동
+  title: 소프트웨어 엔지니어
+  email: hong@example.com
+  phone: 010-1234-5678
+  company: 테크 주식회사
+  image: https://lh3.googleusercontent.com/ogw/AF2bZyjeSzNgTSAL3Cd-DLZUMswKL0c96saNxNkEdJWXoszO-g
+
+# Display settings
+display:
+  name: true
+  title: true
+  email: true
+  phone: true
+  company: true

@@ -58,12 +58,26 @@ layout: default
             
             if (window.DeviceOrientationEvent) {
                 window.addEventListener('deviceorientation', function(event) {
-                    const tiltX = event.beta;  // -180 to 180
-                    const tiltY = event.gamma; // -90 to 90
+                    let tiltX = event.beta;  // -180 to 180
+                    let tiltY = event.gamma; // -90 to 90
 
                     if (tiltX !== null && tiltY !== null) {
-                        const intensity = Math.sqrt(tiltX * tiltX + tiltY * tiltY) / 10;
-                        card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+                        // 각도를 -10에서 10 사이로 제한
+                        tiltX = Math.max(-10, Math.min(10, tiltX));
+                        tiltY = Math.max(-10, Math.min(10, tiltY));
+
+                        // 각도를 0-1 범위로 정규화
+                        const normalizedX = (tiltX + 10) / 20;
+                        const normalizedY = (tiltY + 10) / 20;
+
+                        // 회전 각도 계산 (최대 5도)
+                        const rotateX = normalizedX * 5 - 2.5;
+                        const rotateY = normalizedY * 5 - 2.5;
+
+                        // 반짝임 효과 강도 계산
+                        const intensity = Math.sqrt(rotateX * rotateX + rotateY * rotateY) / 5;
+
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                         card.classList.add('active');
                         card.style.setProperty('--intensity', intensity);
                     }

@@ -68,9 +68,6 @@
 3. 다음 설정을 **신중히** 수정합니다:
 
 ```yaml
-# Site settings
-title: 모두의오늘 온라인 명함
-
 # Card settings (개인 정보로 수정하세요)
 card:
   name: 홍길동  # 이름

@@ -4,10 +4,6 @@
 # 3. card.image: 유효하지 않은 URL을 입력하면 이미지 로딩에 실패할 수 있습니다.
 # 4. display 설정들: 모두 false로 설정하면 카드에 표시할 정보가 없어 의도치 않은 레이아웃이 될 수 있습니다.
 
-# Site settings
-# 웹사이트의 제목을 설정합니다. 브라우저 탭이나 검색 결과에서 표시됩니다.
-title: 모두의오늘 온라인 명함
-
 # Card settings
 card:
   # 디지털 명함에 표시될 이름입니다.
@@ -46,5 +42,7 @@ display:
   company: true
 
 # Do not Touch !!!
+# Site settings
+title: 모두의오늘 온라인 명함
 baseurl: ""
 url: ""

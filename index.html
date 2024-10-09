@@ -1,0 +1,108 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="ko" class="dark:bg-gray-900">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{ site.card.name }}의 디지털 명함</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#1a202c',
+                        darkText: '#e2e8f0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { touch-action: manipulation; }
+        .card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(0deg);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+        .card.active::before {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const card = document.querySelector('.card');
+            
+            if (window.DeviceOrientationEvent) {
+                window.addEventListener('deviceorientation', function(event) {
+                    const tiltX = event.beta;  // -180 to 180
+                    const tiltY = event.gamma; // -90 to 90
+
+                    if (tiltX !== null && tiltY !== null) {
+                        const intensity = Math.sqrt(tiltX * tiltX + tiltY * tiltY) / 10;
+                        card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+                        card.classList.add('active');
+                        card.style.setProperty('--intensity', intensity);
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-darkBg text-gray-900 dark:text-darkText flex items-center justify-center min-h-screen transition-colors duration-300">
+    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-sm w-full transition-colors duration-300">
+        <div class="text-center">
+            <img class="w-32 h-32 rounded-full mx-auto" src="{{ site.card.image }}" alt="{{ site.card.name }}의 프로필 이미지">
+            {% if site.display.name %}
+            <h1 class="mt-4 text-2xl font-bold text-gray-800 dark:text-white">{{ site.card.name }}</h1>
+            {% endif %}
+            {% if site.display.title %}
+            <p class="text-gray-600 dark:text-gray-400">{{ site.card.title }}</p>
+            {% endif %}
+        </div>
+        <div class="mt-6">
+            {% if site.display.email %}
+            <p class="text-gray-700 dark:text-gray-300"><strong>이메일:</strong> {{ site.card.email }}</p>
+            {% endif %}
+            {% if site.display.phone %}
+            <p class="text-gray-700 dark:text-gray-300"><strong>전화:</strong> <span class="font-semibold">{{ site.card.phone }}</span></p>
+            {% endif %}
+            {% if site.display.company %}
+            <p class="text-gray-700 dark:text-gray-300"><strong>회사:</strong> {{ site.card.company }}</p>
+            {% endif %}
+        </div>
+        <div class="mt-6">
+            <a href="tel:{{ site.card.phone }}" class="block w-full bg-blue-500 dark:bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition duration-300">
+                전화하기
+            </a>
+        </div>
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
+            자동으로 전화 앱으로 연결됩니다. 연결되지 않으면 위의 버튼을 클릭하세요.<br>
+            전화를 걸 수 없는 경우 위의 번호로 연락 바랍니다.
+        </p>
+    </div>
+</body>
+</html>
